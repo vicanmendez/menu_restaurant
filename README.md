@@ -48,7 +48,10 @@ php artisan migrate
 # 5️⃣ Levantar el servidor local
 php artisan serve
 
+# IPORTANTE: Inicialmente, tendrías que registrar un usuario al menos para la administración
+
 La aplicación estará disponible en http://127.0.0.1:8000
+Para crear un nuevo usuario: <b> http:127.0.0.1:8000/register </b>
 
 🌍 Despliegue en Web Hosting Compartido
 
