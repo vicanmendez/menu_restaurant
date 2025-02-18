@@ -53,9 +53,11 @@ php artisan serve
 La aplicación estará disponible en http://127.0.0.1:8000
 Para crear un nuevo usuario: <b> http:127.0.0.1:8000/register </b>
 
-🌍 Despliegue en Web Hosting Compartido
+🌍 <h2> Despliegue en Web Hosting Compartido </h2>
 
-1️⃣ Subir archivos al hosting mediante FTP o Panel de Control (ej. cPanel).2️⃣ Configurar .env con las credenciales de la base de datos del servidor.3️⃣ Ejecutar migraciones en el servidor remoto:
+1️⃣ Subir archivos al hosting mediante FTP o Panel de Control (ej. cPanel).
+2️⃣ Configurar .env con las credenciales de la base de datos del servidor
+3️⃣ Ejecutar migraciones en el servidor remoto:
 
 php artisan migrate --force
 
@@ -65,7 +67,7 @@ chmod -R 775 storage bootstrap/cache
 
 5️⃣ Apuntar el dominio/subdominio al directorio public/ del proyecto.
 
-☁️ Despliegue en Cloud (Ejemplo: DigitalOcean, AWS, Heroku)
+☁️ <h2> Despliegue en Cloud (Ejemplo: DigitalOcean, AWS, Heroku) </h2>
 
 🔹 Opción 1: DigitalOcean / VPS
 
