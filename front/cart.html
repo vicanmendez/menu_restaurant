@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Fine dining restaurant offering exceptional culinary experiences" />
+        <meta name="author" content="" />
+        <title>Your Cart - La Maison</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            :root {
+                --primary-color: #2C3639;
+                --secondary-color: #A27B5C;
+                --accent-color: #DCD7C9;
+                --text-color: #2C3639;
+                --light-bg: #F9F5F0;
+            }
+            
+            body {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--text-color);
+                background-color: var(--light-bg);
+            }
+            
+            h1, h2, h3, h4, h5, .navbar-brand {
+                font-family: 'Cormorant Garamond', serif;
+            }
+
+            .navbar {
+                background-color: rgba(249, 245, 240, 0.95) !important;
+                padding: 1.5rem 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+
+            .cart-item {
+                background: white;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .cart-item img {
+                width: 100px;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 4px;
+            }
+
+            .form-section {
+                background: white;
+                border-radius: 8px;
+                padding: 30px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .total-section {
+                background: var(--primary-color);
+                color: white;
+                border-radius: 8px;
+                padding: 20px;
+            }
+
+            .price {
+                color: var(--secondary-color);
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1.3rem;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">La Maison</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="index.html">All Dishes</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="index.html">Chef's Specials</a></li>
+                                <li><a class="dropdown-item" href="index.html">Seasonal Menu</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="cart.html" class="btn btn-outline-dark active">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">3</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Cart section-->
+        <section class="py-5" style="margin-top: 60px;">
+            <div class="container px-4 px-lg-5">
+                <h1 class="display-5 fw-bolder mb-4">Your Order</h1>
+                
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Cart items -->
+                        <div id="cartItems">
+                            <!-- Items will be inserted here dynamically -->
+                        </div>
+
+                        <!-- Customer Information Form -->
+                        <div class="form-section mt-4">
+                            <h4 class="fw-bolder mb-4">Customer Information</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="customerName" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="customerName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="orderType" class="form-label">Order Type</label>
+                                    <select class="form-select" id="orderType" required>
+                                        <option value="">Select order type</option>
+                                        <option value="dine-in">Dine In</option>
+                                        <option value="takeaway">Take Away</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="specialInstructions" class="form-label">Special Instructions (Optional)</label>
+                                    <textarea class="form-control" id="specialInstructions" rows="3"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="col-lg-4">
+                        <div class="total-section">
+                            <h4 class="fw-bolder mb-4">Order Summary</h4>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Tax</span>
+                                <span id="tax">$0.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-4">
+                                <span class="fw-bold">Total</span>
+                                <span id="total" class="fw-bold">$0.00</span>
+                            </div>
+                            <button class="btn btn-outline-light w-100" onclick="placeOrder()">Place Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="py-5">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; La Maison 2023</p>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script src="cart.js"></script>
+        <script>
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+        </script>
+
+        <!-- Success Modal -->
+        <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body text-center p-5">
+                        <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                        <h3 class="mt-3 mb-4" id="successModalMessage"></h3>
+                        <a href="index.html" class="btn btn-outline-dark">Return to Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Fine dining restaurant offering exceptional culinary experiences" />
+        <meta name="author" content="" />
+        <title>La Maison - Fine Dining Experience</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            :root {
+                --primary-color: #2C3639;
+                --secondary-color: #A27B5C;
+                --accent-color: #DCD7C9;
+                --text-color: #2C3639;
+                --light-bg: #F9F5F0;
+            }
+            
+            body {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--text-color);
+                background-color: var(--light-bg);
+            }
+            
+            h1, h2, h3, h4, h5, .navbar-brand {
+                font-family: 'Cormorant Garamond', serif;
+            }
+
+            .navbar {
+                background-color: rgba(249, 245, 240, 0.95) !important;
+                padding: 1.5rem 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            }
+
+            .navbar.scrolled {
+                background-color: rgba(249, 245, 240, 0.98) !important;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .navbar-brand {
+                font-size: 2rem;
+                color: var(--primary-color) !important;
+                font-weight: 600;
+            }
+
+            .nav-link {
+                color: var(--primary-color) !important;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-size: 0.9rem;
+            }
+
+            .nav-link:hover {
+                color: var(--secondary-color) !important;
+            }
+
+            .dropdown-menu {
+                background-color: rgba(249, 245, 240, 0.98);
+                border: none;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            }
+
+            .dropdown-item:hover {
+                background-color: var(--accent-color);
+            }
+
+            .hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80');
+                background-size: cover;
+                background-position: center;
+                padding: 200px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 4rem;
+                font-weight: 700;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+
+            .btn-outline-dark {
+                border-color: var(--secondary-color);
+                color: var(--secondary-color);
+            }
+
+            .btn-outline-dark:hover {
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-color);
+                color: white;
+            }
+
+            .card {
+                border: none;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                transition: all 0.3s ease;
+                background-color: white;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+
+            .card-img-top {
+                height: 250px;
+                object-fit: cover;
+            }
+
+            .price {
+                color: var(--secondary-color);
+                font-family: 'Cormorant Garamond', serif;
+                font-size: 1.3rem;
+            }
+
+            .badge.special {
+                background-color: var(--secondary-color) !important;
+            }
+
+            footer {
+                background-color: var(--primary-color) !important;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">La Maison</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="index.html">All Dishes</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="index.html">Chef's Specials</a></li>
+                                <li><a class="dropdown-item" href="index.html">Seasonal Menu</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="cart.html" class="btn btn-outline-dark">
+                        <i class="bi-cart-fill me-1"></i>
+                        Cart
+                        <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- Header-->
+        <header class="hero-section">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Culinary Excellence</h1>
+                    <p class="lead fw-normal text-white mb-0">Experience fine dining at its best</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2 class="text-center mb-5 display-5">Our Signature Dishes</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <div class="badge special text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Chef's Special</div>
+                            <a href="item.html">
+                                <img class="card-img-top" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80" alt="Pan-Seared Sea Bass" />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">
+                                        <a href="item.html" class="text-decoration-none text-dark">Pan-Seared Sea Bass</a>
+                                    </h5>
+                                    <div class="price">$42.00</div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="item.html">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <a href="item.html">
+                                <img class="card-img-top" src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853" alt="Truffle Risotto" />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">
+                                        <a href="item.html" class="text-decoration-none text-dark">Truffle Risotto</a>
+                                    </h5>
+                                    <div class="price">$36.00</div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="item.html">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <a href="item.html">
+                                <img class="card-img-top" src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Wagyu Beef Tenderloin" />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">
+                                        <a href="item.html" class="text-decoration-none text-dark">Wagyu Beef Tenderloin</a>
+                                    </h5>
+                                    <div class="price">$58.00</div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="item.html">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <a href="item.html">
+                                <img class="card-img-top" src="https://images.unsplash.com/photo-1560717845-968823efbee1" alt="Lobster Thermidor" />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">
+                                        <a href="item.html" class="text-decoration-none text-dark">Lobster Thermidor</a>
+                                    </h5>
+                                    <div class="price">$52.00</div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="item.html">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <a href="item.html">
+                                <img class="card-img-top" src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec" alt="Duck à l'Orange" />
+                            </a>
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <h5 class="fw-bolder">
+                                        <a href="item.html" class="text-decoration-none text-dark">Duck à l'Orange</a>
+                                    </h5>
+                                    <div class="price">$45.00</div>
+                                </div>
+                            </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="item.html">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; La Maison 2023</p>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <script>
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    document.querySelector('.navbar').classList.add('scrolled');
+                } else {
+                    document.querySelector('.navbar').classList.remove('scrolled');
+                }
+            });
+        </script>
+    </body>
+</html>
