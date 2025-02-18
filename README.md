@@ -1,4 +1,4 @@
-**Sistema de gestión de pedidos para restaurante **
+<h1> Sistema de gestión de pedidos para restaurante </h1>
 (ideal para generar QRs en cartas de menú)
 
 
