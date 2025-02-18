@@ -1,63 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Fine dining restaurant offering exceptional culinary experiences" />
-    <meta name="author" content="" />
-    <title>{{ $dish->name }} - La Maison</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <style>
-        /* Tus estilos personalizados aquí */
-        :root {
-            --primary-color: #2C3639;
-            --secondary-color: #A27B5C;
-            --accent-color: #DCD7C9;
-            --text-color: #2C3639;
-            --light-bg: #F9F5F0;
-        }
-        /* ... (resto de tus estilos personalizados) ... */
-    </style>
-</head>
-<body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="{{ route('home') }}">La Maison</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="{{ route('home') }}">All Dishes</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                            <li><a class="dropdown-item" href="{{ route('home') }}">Chef's Specials</a></li>
-                            <li><a class="dropdown-item" href="{{ route('home') }}">Seasonal Menu</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <a href="{{ route('cart') }}" class="btn btn-outline-dark">
-                    <i class="bi-cart-fill me-1"></i>
-                    Cart
-                    <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                </a>
-            </div>
-        </div>
-    </nav>
+@extends('layouts.front')
+
+@section('content')
+
+
 
     <!-- Product section-->
     <section class="py-5 product-section">
@@ -234,3 +179,6 @@
     </script>
 </body>
 </html>
+
+
+@endsection

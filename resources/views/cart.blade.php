@@ -1,32 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Carrito - {{ config('app.name', 'Restaurant') }}</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="{{ asset('css/front-styles.css') }}" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="/">Restaurante</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+@extends('layouts.front')
 
+@section('content')
     <!-- Cart section-->
     <section class="py-5">
         <div class="container px-4 px-lg-5 my-5">
@@ -162,9 +136,9 @@
         }
 
         document.getElementById('orderForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    e.preventDefault(); // Evita que el formulario se envíe de manera tradicional
+
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]'); // Obtén el carrito del localStorage
             if (cart.length === 0) {
                 alert('El carrito está vacío');
                 return;
@@ -174,14 +148,17 @@
                 customer_name: document.getElementById('customer_name').value,
                 order_type: document.getElementById('order_type').value,
                 special_instructions: document.getElementById('special_instructions').value,
-                items: cart
+                items: cart.map(item => ({
+                    id: item.id,
+                    quantity: item.quantity
+                }))
             };
 
             fetch('{{ route("order.store") }}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}' // Usa el token CSRF de Laravel
                 },
                 body: JSON.stringify(formData)
             })
@@ -189,8 +166,8 @@
             .then(data => {
                 if (data.success) {
                     alert('¡Pedido realizado con éxito!');
-                    localStorage.removeItem('cart');
-                    window.location.href = '/';
+                    localStorage.removeItem('cart'); // Limpia el carrito
+                    window.location.href = '/'; // Redirige al inicio
                 } else {
                     alert('Error: ' + data.message);
                 }
@@ -201,8 +178,14 @@
             });
         });
 
+      
+
+
         // Load cart on page load
         document.addEventListener('DOMContentLoaded', loadCart);
+
     </script>
 </body>
 </html>
+
+@endsection
