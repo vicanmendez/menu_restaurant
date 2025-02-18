@@ -1,16 +1,16 @@
-Sistema de gestión de pedidos para restaurante 
+***Sistema de gestión de pedidos para restaurante ***
 (ideal para generar QRs en cartas de menú)
 
 
 
 
 
-Bienvenido/a a este proyecto Laravel. Es una pequeña contribución al rubro, desarrollada con pasión y en constante mejora. 🌱
+Bienvenido/a a este proyecto Laravel. Es una pequeña contribución al rubro, desarrollada con gusto y en constante mejora. 🌱
 
 📌 Características
 
 ✅ Laravel 10 y PHP 8.x
-✅ Base de datos MySQL/MariaDB
+✅ Base de datos SQLite (en producción es ideal usar MariaDB u otro sistema similar)
 ✅ Autenticación de usuarios
 ✅ API RESTful (en desarrollo)
 ✅ Panel de administración (próximamente)
@@ -23,17 +23,17 @@ PHP (>= 8.x)
 
 Composer (https://getcomposer.org/)
 
-MySQL o MariaDB
+MySQL o MariaDB (ideal, para trabajar en local se puede usar SQLite)
 
 Node.js & npm (para assets frontend)
 
 💻 Pasos para Ejecutar en Local
 
 # 1️⃣ Clonar el repositorio
-git clone https://github.com/usuario/proyecto-laravel.git
+git clone https://github.com/vicanmendez/menu_restaurant.git
 cd proyecto-laravel
 
-# 2️⃣ Instalar dependencias
+# 2️⃣ Instalar dependencias 
 composer install
 npm install && npm run build
 
@@ -43,7 +43,7 @@ php artisan key:generate
 
 # 4️⃣ Configurar base de datos
 # Editar el archivo .env con las credenciales de MySQL
-php artisan migrate --seed
+php artisan migrate
 
 # 5️⃣ Levantar el servidor local
 php artisan serve
